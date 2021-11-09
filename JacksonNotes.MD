@@ -34,7 +34,7 @@
 
 
 Layout of Properties
-madisonProperties = [
+properties = [
   {
     '$': {
       IDValue: '2222',
@@ -43,7 +43,18 @@ madisonProperties = [
       IDRank: 'primary',
       IDScopeType: 'sender'
     },
-    PropertyID: [ [Object] ],
+    PropertyID: [
+      {
+        '$': { AddressType: 'property' },
+        AddressLine1: [ '957 7th Ave SW' ],
+        City: [ 'Forest Lake' ],
+        State: [ 'MN' ],
+        PostalCode: [ '55025' ],
+        Country: [ 'USA' ],
+        CountyName: [ 'United States of America' ],
+        UnparsedAddress: [ '957 7th Ave SW\nForest Lake, MN 55025' ]
+      }
+    ],
     ILS_Identification: [ [Object] ],
     Information: [ [Object] ],
     Fee: [ [Object] ],
@@ -72,99 +83,12 @@ madisonProperties = [
     ],
     Promotional: [ 'Heat, Water and Trash Included!' ]
   },
-  {
-    '$': {
-      IDValue: '1111',
-      OrganizationName: 'ABODO',
-      IDType: 'PropertyID',
-      IDRank: 'primary',
-      IDScopeType: 'sender'
-    },
-    PropertyID: [ [Object] ],
-    ILS_Identification: [ [Object] ],
-    Information: [ [Object] ],
-    Fee: [ [Object] ],
-    Amenity: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    Policy: [ [Object] ],
-    Building: [ [Object] ],
-    Floorplan: [ [Object], [Object] ],
-    ILS_Unit: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    Utility: [ [Object] ],
-    File: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    Promotional: [ 'Heat, Water and Trash Included!' ]
-  },
-  {
-    '$': {
-      IDValue: '1111',
-      OrganizationName: 'ABODO',
-      IDType: 'PropertyID',
-      IDRank: 'primary',
-      IDScopeType: 'sender'
-    },
-    PropertyID: [ [Object] ],
-    ILS_Identification: [ [Object] ],
-    Information: [ [Object] ],
-    Fee: [ [Object] ],
-    Amenity: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    Policy: [ [Object] ],
-    Building: [ [Object] ],
-    Floorplan: [ [Object], [Object] ],
-    ILS_Unit: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    Utility: [ [Object] ],
-    File: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
-    Promotional: [ 'Heat, Water and Trash Included!' ]
-  }
+  ...
 ]
 
 
-./PropertyID/Identification/@IDValue
-propertyID [
-  {
-    '$': {
-      IDValue: '2181740',
-      OrganizationName: 'Kason, Inc.',
-      IDType: 'propertyID',
-      IDRank: 'primary',
-      IDScopeType: 'sender'
-    }
-  }
-]
-
-
-
-
+Extra Credit Goals
+  1. Get the Unit count and multiple by the Bedroom count
 <Floorplan IDValue="95" OrganizationName="ABODO" IDType="FloorplanID" IDRank="primary" IDScopeType="sender">
 <Name>Upgraded Tahoe</Name>
 <Comment>This modern corner apartment comes with granite countertops, stainless steel appliances, shaker-style cabinets, luxury vinyl plank floors, and accent walls. It also features a spacious and versatile living and dining combination space.</Comment>
