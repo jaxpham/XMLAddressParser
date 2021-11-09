@@ -1,7 +1,8 @@
 1. What is XML file?
   A. https://www.w3schools.com/xml/xml_whatis.asp
 
-2. Should I use a parsing library or create custom parser? [Parsing Library or Custom Parser] (https://softwareengineering.stackexchange.com/questions/17824/should-i-use-a-parser-generator-or-should-i-roll-my-own-custom-lexer-and-parser)
+2. Should I use a parsing library or create custom parser? 
+(https://softwareengineering.stackexchange.com/questions/17824/should-i-use-a-parser-generator-or-should-i-roll-my-own-custom-lexer-and-parser)
     
     A. Custom Parser
       1. Need it NOW!
