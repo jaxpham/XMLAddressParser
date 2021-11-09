@@ -1,9 +1,9 @@
 1. What is XML file?
   A. https://www.w3schools.com/xml/xml_whatis.asp
 
-2. Should I use a parsing library or create custom parser? 
+2. Should I use a parsing library or create custom parser?
 (https://softwareengineering.stackexchange.com/questions/17824/should-i-use-a-parser-generator-or-should-i-roll-my-own-custom-lexer-and-parser)
-    
+
     A. Custom Parser
       1. Need it NOW!
       2. Need parser to be fast
@@ -68,7 +68,89 @@ properties = [
     ],
     Policy: [ [Object] ],
     Building: [ [Object] ],
-    Floorplan: [ [Object], [Object] ],
+    Floorplan: [
+    {
+        '$': {
+          IDValue: '91',
+          OrganizationName: 'ABODO',
+          IDType: 'FloorplanID',
+          IDRank: 'primary',
+          IDScopeType: 'sender'
+        },
+        Name: [ 'Tahoe' ],
+        Comment: [
+          'This corner apartment offers a spacious and versatile living and dining combination space.  This home also features an abundance of closet and bedroom space.'
+        ],
+        UnitCount: [ '5' ],
+        FloorplanAvailabilityURL: [
+          'https://www.norhart.com/communities/minneapolis-st-paul/cedarwood-apartments/tahoe?src=abd'
+        ],
+        UnitsAvailable: [ '0' ],
+        DisplayedUnitsAvailable: [ '0' ],
+        Room: [
+          {
+            '$': { RoomType: 'Bedroom' }, \
+            Count: [ '3.0' ],
+            Comment: [ '' ]
+          },
+          ...
+        ],
+        SquareFeet: [ [Object] ],
+        MarketRent: [ [Object] ],
+        EffectiveRent: [ [Object] ],
+        LeaseTerm: [ [Object] ],
+        Deposit: [ [Object] ],
+        Fee: [ [Object] ],
+        Amenity: [
+          [Object], [Object],
+          [Object], [Object],
+          [Object], [Object],
+          [Object], [Object],
+          [Object], [Object],
+          [Object], [Object],
+          [Object]
+        ],
+        File: [ [Object] ],
+        Promotional: [ 'Heat, Water and Trash Included!' ]
+    },
+      {
+        '$': {
+          IDValue: '95',
+          OrganizationName: 'ABODO',
+          IDType: 'FloorplanID',
+          IDRank: 'primary',
+          IDScopeType: 'sender'
+        },
+        Name: [ 'Upgraded Tahoe' ],
+        Comment: [
+          'This modern corner apartment comes with granite countertops, stainless steel appliances, shaker-style cabinets, luxury vinyl plank floors, and accent walls.  It also features a spacious and versatile living and dining combination space.'
+        ],
+        UnitCount: [ '3' ],
+        FloorplanAvailabilityURL: [
+          'https://www.norhart.com/communities/minneapolis-st-paul/cedarwood-apartments/upgraded-tahoe?src=abd'
+        ],
+        UnitsAvailable: [ '0' ],
+        DisplayedUnitsAvailable: [ '0' ],
+        Room: [ [Object], [Object] ],
+        SquareFeet: [ [Object] ],
+        MarketRent: [ [Object] ],
+        EffectiveRent: [ [Object] ],
+        LeaseTerm: [ [Object] ],
+        Deposit: [ [Object] ],
+        Fee: [ [Object] ],
+        Amenity: [
+          [Object], [Object], [Object],
+          [Object], [Object], [Object],
+          [Object], [Object], [Object],
+          [Object], [Object], [Object],
+          [Object], [Object], [Object],
+          [Object], [Object], [Object],
+          [Object]
+        ],
+        File: [ [Object] ],
+        Promotional: [ 'Heat, Water and Trash Included!' ]
+      }
+    ],
     ILS_Unit: [
       [Object], [Object],
       [Object], [Object],

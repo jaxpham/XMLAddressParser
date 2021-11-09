@@ -27,7 +27,7 @@ const getPropertyByCity = (city) => {
 
         for (let i = 0; i < allProperties.length; i++) {
           let propertyId = allProperties[i].PropertyID;
-          // Gets all
+          // Gets all propertyId
           // console.log(propertyId[i])
 
           for (let j = 0; j < propertyId.length; j++) {
@@ -43,16 +43,19 @@ const getPropertyByCity = (city) => {
             }
           }
         }
+        // Check for the specific city properties
         // console.log(cityProperties)
 
         for (let i = 0; i < cityProperties.length; i++) {
-          let cityPropertyId = cityProperties[i].PropertyID;
 
           let property = {
             property_id: null,
             name: null,
-            email: null
+            email: null,
+            bedrooms: null || 0
           };
+
+          let cityPropertyId = cityProperties[i].PropertyID;
 
           for(let j = 0; j < cityPropertyId.length; j++) {
             let cityIdentification = cityPropertyId[j].Identification;
@@ -67,6 +70,22 @@ const getPropertyByCity = (city) => {
               property.email = cityEmail
             }
           }
+
+          let cityPropertiesFloorPlans = cityProperties[i].Floorplan
+
+          for (l = 0; l < cityPropertiesFloorPlans.length; l++) {
+            let cityPropertiesRooms = cityPropertiesFloorPlans[l].Room;
+
+            for (m = 0; m < cityPropertiesRooms.length; m++) {
+              let cityPropertiesRoomTypes = cityPropertiesRooms[m];
+              //All Rooms from
+              // console.log(cityPropertiesRoomTypes)
+
+              if(cityPropertiesRoomTypes.$.RoomType.toLowerCase() === 'bedroom') {
+                property.bedrooms+= Number(cityPropertiesRoomTypes.Count[0]);
+              }
+            }
+          }
           properties.push(property)
         }
       });
@@ -75,4 +94,4 @@ const getPropertyByCity = (city) => {
   });
 }
 
-getPropertyByCity('MadiSon')
+getPropertyByCity('MaDiSon')
