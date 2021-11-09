@@ -21,7 +21,7 @@ npm install
 node index.js in the terminal
 
 ## Thought Process
-(for more details see [JacksonNotes](https://github.com/jaxpham/XMLAddressParser/blob/main/JacksonNotes.MD)
+(for more details see [JacksonNotes](https://github.com/jaxpham/XMLAddressParser/blob/main/JacksonNotes.MD))
 
 ## Future Goals
 - Parse out the number of bedrooms
