@@ -12,13 +12,9 @@ properties = [
 ## Getting Started
 
 1. Clone this repo or fork to your own repo
-2. cd into the directory on your local machine
-3. Install dependencies
-
-```
-npm install
-```
-node index.js in the terminal
+2. cd /XMLAddressParser
+3. npm install
+4. node index.js
 
 ## Thought Process
 (for more details see [JacksonNotes](https://github.com/jaxpham/XMLAddressParser/blob/main/JacksonNotes.MD))
