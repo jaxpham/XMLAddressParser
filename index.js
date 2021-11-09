@@ -99,4 +99,4 @@ const getPropertyByCity = (city) => {
   });
 }
 
-getPropertyByCity('ForEst Lake')
+getPropertyByCity('MadiSon')
