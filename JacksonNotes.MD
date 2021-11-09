@@ -27,7 +27,7 @@
   2. Why can't I get full details?
     A. npm install concat-stream
       1. Writable stream that concatenates all the data from a stream and calls a callback with the result. Use this when you want to collect all the data from a stream into a single buffer.
-      2. What is .pipe and what does it do?
+      2. What is .pipe() and what does it do?
         a. .pipe() feeds a readable stream into a writable stream so that as the contents are incrementally read from the readable stream, they are automatically forwarded to the writable stream. It manages the reading from one stream and writing to another stream automatically for you.
           1. https://stackoverflow.com/questions/53130609/what-is-the-pipe-method-in-nodejs
 
