@@ -24,8 +24,9 @@ node index.js in the terminal
 (for more details see [JacksonNotes](https://github.com/jaxpham/XMLAddressParser/blob/main/JacksonNotes.MD))
 
 ## Future Goals
-- Parse out the number of bedrooms
+- Parse out the number of bedrooms (Complete)
 - Save data into a database
+  - I would use a node sql such as MySql or Postgresql to insert into a database
 - Save data into a dynamoDB database. We recommend using dynamoDB in a docker
 container, which can be found here:
 https://hub.docker.com/r/amazon/dynamodb-local/ however may also use AWS

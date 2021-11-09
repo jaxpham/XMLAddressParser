@@ -32,6 +32,7 @@
   A. Check each properties' address city for Madison
     1. Must filter all properties for those that are only in Madison first
       1. PropertyId with the city Madison should be ["2222", "1111", "1111"]
+      2. Note - Usually property_id should be unique but in this case there are two properties that have 1111. This means we need to do an ETL cleaning process
 
 
 Layout of Properties
