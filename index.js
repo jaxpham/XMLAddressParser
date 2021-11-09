@@ -5,72 +5,74 @@ var concat = require('concat-stream');
 
 parser.on('error', function(err) { console.log('Parser error', err); });
 
+const getPropertyByCity = (city) => {
+  https.get('https://s3.amazonaws.com/abodo-misc/sample_abodo_feed.xml', function(resp) {
 
-https.get('https://s3.amazonaws.com/abodo-misc/sample_abodo_feed.xml', function(resp) {
+    resp.on('error', function(err) {
+      console.log('Error while reading', err);
+    });
 
-  resp.on('error', function(err) {
-    console.log('Error while reading', err);
-  });
+    let properties = [];
 
-  let properties = [];
+    let cityProperties = [];
 
-  let madisonProperties = [];
+    resp.pipe(concat(function(buffer) {
+      var str = buffer.toString();
+      parser.parseString(str, function(err, result) {
+        // console.log('Finished parsing:', err, result);
 
-  resp.pipe(concat(function(buffer) {
-    var str = buffer.toString();
-    parser.parseString(str, function(err, result) {
-      // console.log('Finished parsing:', err, result);
+        let allProperties = result.PhysicalProperty.Property;
+        // Gets all properties
+        // console.log(allProperties)
 
-      let allProperties = result.PhysicalProperty.Property;
-      // Gets all properties
-      // console.log(result.PhysicalProperty)
+        for (let i = 0; i < allProperties.length; i++) {
+          let propertyId = allProperties[i].PropertyID;
+          // Gets all
+          // console.log(propertyId[i])
 
-      for (let i = 0; i < allProperties.length; i++) {
-        let propertyId = allProperties[i].PropertyID;
-        // Gets all
-        // console.log(propertyId)
+          for (let j = 0; j < propertyId.length; j++) {
+            let address = propertyId[j].Address;
 
-        for (let j = 0; j < propertyId.length; j++) {
-          let address = propertyId[j].Address;
+            for (let k = 0; k < address.length; k++) {
+              //All adresses
+              // console.log(address);
 
-          for (let k = 0; k < address.length; k++) {
-            //MN and WI Madison zipcodes
-            // console.log(address[k]);
-            if (address[k].City[0].toLowerCase() === 'madison') {
-              madisonProperties.push(allProperties[i]);
+              if (address[k].City[0].toLowerCase() === `${city}`.toLowerCase()) {
+                cityProperties.push(allProperties[i]);
+              }
             }
           }
         }
-      }
+        // console.log(cityProperties)
 
+        for (let i = 0; i < cityProperties.length; i++) {
+          let cityPropertyId = cityProperties[i].PropertyID;
 
-      for (let i = 0; i < madisonProperties.length; i++) {
-        let madPropertyId = madisonProperties[i].PropertyID;
+          let property = {
+            property_id: null,
+            name: null,
+            email: null
+          };
 
-        let property = {
-          property_id: null,
-          name: null,
-          email: null
-        };
+          for(let j = 0; j < cityPropertyId.length; j++) {
+            let cityIdentification = cityPropertyId[j].Identification;
+            let cityName = cityPropertyId[j].MarketingName[0];
+            let cityEmail = cityPropertyId[j].Email[0];
 
-        for(let j = 0; j < madPropertyId.length; j++) {
-          let madIdentification = madPropertyId[j].Identification;
-          let madName = madPropertyId[j].MarketingName[0];
-          let madEmail = madPropertyId[j].Email[0];
+            for (let k = 0; k < cityIdentification.length; k++) {
 
-          for (let k = 0; k < madIdentification.length; k++) {
-
-            let madIDValue = madIdentification[k].$.IDValue
-            property.property_id = madIDValue;
-            property.name = madName
-            property.email = madEmail
+              let cityIDValue = cityIdentification[k].$.IDValue
+              property.property_id = cityIDValue;
+              property.name = cityName
+              property.email = cityEmail
+            }
           }
+          properties.push(property)
         }
-        properties.push(property)
-      }
-    });
-    console.log(properties)
-  }));
-});
+      });
+      console.log(properties)
+    }));
+  });
+}
 
-
+getPropertyByCity('MadiSon')
