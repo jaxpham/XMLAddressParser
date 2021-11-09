@@ -75,6 +75,10 @@ const getPropertyByCity = (city) => {
 
           for (l = 0; l < cityPropertiesFloorPlans.length; l++) {
             let cityPropertiesRooms = cityPropertiesFloorPlans[l].Room;
+            let cityPropertiesUnitCount = cityPropertiesFloorPlans[l].UnitCount[0]
+
+            //UnitCounts
+            // console.log(cityPropertiesUnitCount)
 
             for (m = 0; m < cityPropertiesRooms.length; m++) {
               let cityPropertiesRoomTypes = cityPropertiesRooms[m];
@@ -82,7 +86,8 @@ const getPropertyByCity = (city) => {
               // console.log(cityPropertiesRoomTypes)
 
               if(cityPropertiesRoomTypes.$.RoomType.toLowerCase() === 'bedroom') {
-                property.bedrooms+= Number(cityPropertiesRoomTypes.Count[0]);
+
+                property.bedrooms+= (Number(cityPropertiesRoomTypes.Count[0] * cityPropertiesUnitCount));
               }
             }
           }
@@ -94,4 +99,4 @@ const getPropertyByCity = (city) => {
   });
 }
 
-getPropertyByCity('MaDiSon')
+getPropertyByCity('ForEst Lake')

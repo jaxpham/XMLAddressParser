@@ -171,7 +171,8 @@ properties = [
 
 
 Extra Credit Goals
-  1. Get the Unit count and multiple by the Bedroom count
+  1.Parse out the number of bedrooms
+    A. Assumed total bedrooms = units * bedrooms
 <Floorplan IDValue="95" OrganizationName="ABODO" IDType="FloorplanID" IDRank="primary" IDScopeType="sender">
 <Name>Upgraded Tahoe</Name>
 <Comment>This modern corner apartment comes with granite countertops, stainless steel appliances, shaker-style cabinets, luxury vinyl plank floors, and accent walls. It also features a spacious and versatile living and dining combination space.</Comment>
