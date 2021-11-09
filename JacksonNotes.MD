@@ -2,8 +2,7 @@
   A. https://www.w3schools.com/xml/xml_whatis.asp
 
 2. Should I use a parsing library or create custom parser?
-
-  A.  https://softwareengineering.stackexchange.com/questions/17824/should-i-use-a-parser-generator-or-should-i-roll-my-own-custom-lexer-and-parser
+  A. https://softwareengineering.stackexchange.com/questions/17824/should-i-use-a-parser-generator-or-should-i-roll-my-own-custom-lexer-and-parser
     1. Custom Parser
       A. Need it NOW!
       B. Need parser to be fast
